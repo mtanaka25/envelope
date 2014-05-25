@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-z = 10
+z = 11
 #グラフを何本引くかを設定します
-#y=0は本数にカウントしていません
+#y=0があるので、偶数を入力すると左右対称になりません。
 
 def f(x, t):
     return 2 * t * x - t**2
@@ -25,7 +25,7 @@ def subplots():
 
 
 fig, ax = subplots()
-for a in range(-z/2, z/2 + 1):
+for a in range(-z/2, z/2):
    x = np.linspace(-5, 5, 200)
    y = f(x, t=a)
    ax.plot(x, y, 'b-', linewidth=2)
