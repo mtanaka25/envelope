@@ -3,11 +3,13 @@ import numpy as np
 
 z = 10
 #グラフを何本引くかを設定します
+#y=0は本数にカウントしていません
 
 def f(x, t):
     return 2 * t * x - t**2
 #包絡線の元となる関数を設定します
 
+#zの値と、fの形状を変化させれば、それっぽい図が出てくるようになっています。
 
 def subplots():
     "Custom subplots with axes throught the origin"
@@ -23,7 +25,7 @@ def subplots():
 
 
 fig, ax = subplots()
-for a in range(-z/2 + 1, z/2):
+for a in range(-z/2, z/2 + 1):
    x = np.linspace(-5, 5, 200)
    y = f(x, t=a)
    ax.plot(x, y, 'b-', linewidth=2)
