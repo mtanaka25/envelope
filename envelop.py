@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -20,14 +21,15 @@ def subplots():
         ax.spines[spine].set_position('zero')
     for spine in ['right', 'top']:
         ax.spines[spine].set_color('none')
-    
+
     return (fig, ax)
 
 
 fig, ax = subplots()
+x = np.linspace(-5, 5, 200)
+
 for a in range(-z/2 + 1, z/2 + 1):
-   x = np.linspace(-5, 5, 200)
-   y = f(x, t=a)
-   ax.plot(x, y, 'b-', linewidth=2)
-   ax.legend(loc='lower right')
+    y = f(x, t=a)
+    ax.plot(x, y, 'b-', linewidth=2)
+
 plt.show()
