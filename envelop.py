@@ -25,7 +25,7 @@ def subplots():
 
 
 fig, ax = subplots()
-for a in range(-z/2, z/2):
+for a in range(-z/2 + 1, z/2 + 1):
    x = np.linspace(-5, 5, 200)
    y = f(x, t=a)
    ax.plot(x, y, 'b-', linewidth=2)
