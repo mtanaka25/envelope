@@ -26,6 +26,7 @@ if 1:
 
     plt.xticks([])
     plt.yticks([])
+    plt.ylim([-30, 40])
 
     ax.text(0, 1.05, 'y', transform=BlendedGenericTransform(ax.transData, ax.transAxes), ha='center')
     ax.text(1.05, 0, 'x', transform=BlendedGenericTransform(ax.transAxes, ax.transData), va='center')
