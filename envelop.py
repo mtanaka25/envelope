@@ -13,8 +13,6 @@ def f(x, t):
     return 2 * t * x - t**2
 #包絡線の元となる関数を設定します
 
-
-
 def subplots():
     "Custom subplots with axes throught the origin"
     fig, ax = plt.subplots()
@@ -26,7 +24,6 @@ def subplots():
         ax.spines[spine].set_color('none')
 
     return (fig, ax)
-
 
 fig, ax = subplots()
 
