@@ -12,6 +12,11 @@ z=11
 x = numpy.linspace(-5, 5, 1000)
 #xの範囲を指定します。
 
+ymin = -30 #グラフ縦方向の下限
+ymax = 40 #グラフ縦方向の上限
+#この２つはzと連動して適当に決まるようにしたい。
+
+
 def f(x, t):
     return 2 * t * x - t**2
 #包絡線の元となる関数を設定します
@@ -26,7 +31,7 @@ if 1:
 
     plt.xticks([])
     plt.yticks([])
-    plt.ylim([-30, 40])
+    plt.ylim([ymin, ymax])
 
     ax.text(0, 1.05, 'y', transform=BlendedGenericTransform(ax.transData, ax.transAxes), ha='center')
     ax.text(1.05, 0, 'x', transform=BlendedGenericTransform(ax.transAxes, ax.transData), va='center')
