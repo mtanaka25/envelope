@@ -21,32 +21,31 @@ def f(x, t):
     return 2 * t * x - t**2
 #包絡線の元となる関数を設定します
 
-if 1:
-    fig = plt.figure(1)
-    ax = SubplotZero(fig, 111)
-    fig.add_subplot(ax)
 
-    ax.axhline(linewidth=1.7, color="black")
-    ax.axvline(linewidth=1.7, color="black")
+fig = plt.figure(1)
+ax = SubplotZero(fig, 111)
+fig.add_subplot(ax)
 
-    plt.xticks([])
-    plt.yticks([])
-    plt.ylim([ymin, ymax])
+ax.axhline(linewidth=1.7, color="black")
+ax.axvline(linewidth=1.7, color="black")
 
-    ax.text(0, 1.05, 'y', transform=BlendedGenericTransform(ax.transData, ax.transAxes), ha='center')
-    ax.text(1.05, 0, 'x', transform=BlendedGenericTransform(ax.transAxes, ax.transData), va='center')
+plt.xticks([])
+plt.yticks([])
+plt.ylim([ymin, ymax])
 
-    for direction in ["xzero", "yzero"]:
-        ax.axis[direction].set_axisline_style("-|>")
-        ax.axis[direction].set_visible(True)
+ax.text(0, 1.05, '$y$', transform=BlendedGenericTransform(ax.transData, ax.transAxes), ha='center')
+ax.text(1.05, 0, '$x$', transform=BlendedGenericTransform(ax.transAxes, ax.transData), va='center')
 
-    for direction in ["left", "right", "bottom", "top"]:
-        ax.axis[direction].set_visible(False)
+for direction in ["xzero", "yzero"]:
+    ax.axis[direction].set_axisline_style("-|>")
+    ax.axis[direction].set_visible(True)
+
+for direction in ["left", "right", "bottom", "top"]:
+    ax.axis[direction].set_visible(False)
 
         
-    for a in range(-z/2 + 1, z/2 + 1):
-        y = f(x, t=a)
-        ax.plot(x, y, linewidth=1, color="black")
+for a in range(-z/2 + 1, z/2 + 1):
+    y = f(x, t=a)
+    ax.plot(x, y, linewidth=1, color="black")
 
-    plt.show()
-    
+plt.show()
